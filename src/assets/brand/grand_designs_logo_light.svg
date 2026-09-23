@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 140" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Cyan to Deep Sky Blue Gradient -->
+    <linearGradient id="gdLightCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b4d8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Deep Navy Gradient -->
+    <linearGradient id="gdDeepNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2340" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+
+  <!-- ICON MONOGRAM: Interlocking Geometric 'G' & 'D' -->
+  <g transform="translate(10, 10)">
+    <!-- Outer Hexagonal Frame (Letter G) -->
+    <path
+      d="M50 8 L95 33 L95 85 L70 100 L25 100 L5 80 L5 40 L25 20 L50 8 Z"
+      fill="none"
+      stroke="url(#gdDeepNavyGrad)"
+      stroke-width="12"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    />
+
+    <!-- Inner 'G' Spoke & Arrow Hook -->
+    <path
+      d="M55 58 L90 58 L90 82 L70 95 L32 95"
+      fill="none"
+      stroke="url(#gdLightCyanGrad)"
+      stroke-width="11"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    />
+
+    <!-- Dynamic Intersecting 'D' Loop -->
+    <path
+      d="M55 22 L85 40 L108 58 L85 92 L55 105"
+      fill="none"
+      stroke="url(#gdLightCyanGrad)"
+      stroke-width="9"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+    />
+
+    <!-- Core Center Accent Dot -->
+    <circle cx="55" cy="58" r="6" fill="#00b4d8" />
+  </g>
+
+  <!-- TYPOGRAPHY: GRAND DESIGNS (DARK NAVY) -->
+  <g transform="translate(145, 0)">
+    <!-- Primary Wordmark -->
+    <text
+      x="0"
+      y="66"
+      font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif"
+      font-size="44"
+      font-weight="900"
+      letter-spacing="0.08em"
+      fill="#0c2340"
+    >
+      GRAND <tspan fill="url(#gdLightCyanGrad)">DESIGNS</tspan>
+    </text>
+
+    <!-- Subtitle / Descriptor -->
+    <text
+      x="4"
+      y="96"
+      font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif"
+      font-size="14"
+      font-weight="700"
+      letter-spacing="0.34em"
+      fill="#64748b"
+    >
+      DIGITAL &amp; CREATIVE STUDIO
+    </text>
+  </g>
+</svg>
