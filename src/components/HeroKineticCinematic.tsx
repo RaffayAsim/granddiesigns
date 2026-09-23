@@ -122,9 +122,9 @@ function TypewriterText() {
   }, [displayedText, isDeleting, wordIndex]);
 
   return (
-    <span className="inline-block relative text-[#00b4d8] font-serif font-extrabold italic border-b-4 border-[#00b4d8]/40 pb-1">
+    <span className="inline-block relative text-[#00b4d8] font-serif font-extrabold italic border-b-2 sm:border-b-4 border-[#00b4d8]/40 pb-0.5 sm:pb-1">
       {displayedText}
-      <span className="inline-block w-1 h-8 md:h-12 bg-[#00b4d8] ml-1 animate-pulse align-middle" />
+      <span className="inline-block w-0.5 sm:w-1 h-6 sm:h-8 md:h-12 bg-[#00b4d8] ml-1 animate-pulse align-middle" />
     </span>
   );
 }
@@ -214,7 +214,7 @@ function BookCard({ book, onSelectBook }: { book: PortfolioItem; onSelectBook?: 
 
 export default function HeroKineticCinematic({ onSelectBook }: HeroKineticProps) {
   return (
-    <section className="hero-sparkle-section relative flex flex-col pt-16 md:pt-20 pb-0 overflow-hidden bg-gradient-to-br from-[#d9f5fb] via-[#e6f9fc] to-[#ccf2f9] font-sans select-none">
+    <section className="hero-sparkle-section relative flex flex-col pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-0 overflow-hidden bg-gradient-to-br from-[#d9f5fb] via-[#e6f9fc] to-[#ccf2f9] font-sans select-none">
       <style>{`
         @keyframes scrollUp {
           0% { transform: translateY(0); }
@@ -252,12 +252,12 @@ export default function HeroKineticCinematic({ onSelectBook }: HeroKineticProps)
         }}
       />
 
-      <div className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16 grid lg:grid-cols-12 gap-10 items-center pt-4 pb-8 md:pt-6 md:pb-10 relative z-10">
+      <div className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16 grid lg:grid-cols-12 gap-10 items-center pt-2 pb-8 md:pt-4 md:pb-10 relative z-10">
         
         {/* LEFT COLUMN: HIGH-IMPACT PUBLISHING HERO HEADLINE & INLINE QUERY FORM */}
-        <div className="lg:col-span-7 space-y-8 pr-0 lg:pr-8">
+        <div className="lg:col-span-7 space-y-6 sm:space-y-8 pr-0 lg:pr-8">
 
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-[3.2rem] lg:text-[3.6rem] xl:text-[4rem] font-extrabold tracking-tight leading-[1.15] text-[#0c2340] max-w-4xl">
+          <h1 className="font-serif text-[1.85rem] xs:text-3xl sm:text-4xl md:text-[3.2rem] lg:text-[3.6rem] xl:text-[4rem] font-extrabold tracking-tight leading-[1.22] sm:leading-[1.15] text-[#0c2340] max-w-4xl">
             Transform your vision <br className="hidden sm:block" />
             into <TypewriterText />
           </h1>
