@@ -1,0 +1,9 @@
+node_modules
+.git
+.gemini
+QauntumAcDist
+*.zip
+.output
+.wrangler
+.tanstack
+dist
