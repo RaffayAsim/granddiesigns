@@ -1,7 +1,4 @@
 import { useState, useRef, memo } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { RECAPTCHA_SITE_KEY } from "@/lib/recaptchaConfig";
-import { verifyRecaptchaToken } from "@/lib/verifyRecaptcha";
 import {
   validateFullName,
   validateUSPhoneNumber,
@@ -27,7 +24,6 @@ export const SharedHeroInlineQueryBar = memo(function SharedHeroInlineQueryBar({
   const [savedName, setSavedName] = useState("");
   const [savedPhone, setSavedPhone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -147,19 +143,7 @@ export const SharedHeroInlineQueryBar = memo(function SharedHeroInlineQueryBar({
                   return;
                 }
 
-                if (!recaptchaToken) {
-                  setErrorMessage("Please complete the Google reCAPTCHA verification checkbox below.");
-                  return;
-                }
-
                 setSubmitting(true);
-
-                const verifyRes = await verifyRecaptchaToken(recaptchaToken);
-                if (!verifyRes.success) {
-                  setSubmitting(false);
-                  setErrorMessage(verifyRes.message || "reCAPTCHA verification failed. Please try again.");
-                  return;
-                }
 
                 // Web3Forms Submit
                 try {
@@ -169,7 +153,6 @@ export const SharedHeroInlineQueryBar = memo(function SharedHeroInlineQueryBar({
                   formData.append("phone", savedPhone);
                   formData.append("email", val.trim());
                   formData.append("message", "Digital Strategy & Services Inquiry");
-                  formData.append("g-recaptcha-response", recaptchaToken);
 
                   await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
@@ -232,24 +215,6 @@ export const SharedHeroInlineQueryBar = memo(function SharedHeroInlineQueryBar({
           <span>CALL +1 (833) 492-2918</span>
         </a>
       </div>
-
-      {/* OFFICIAL GOOGLE RECAPTCHA V2 WIDGET DISPLAY ON STEP 3 */}
-      {step === 3 && (
-        <div className="pt-2 flex flex-col items-center justify-center animate-in fade-in duration-300">
-          <div className="p-2 rounded-2xl bg-white/90 border-2 border-[#00b4d8] shadow-xl overflow-x-auto">
-            <ReCAPTCHA
-              sitekey={RECAPTCHA_SITE_KEY}
-              onChange={(token) => {
-                setRecaptchaToken(token);
-                setErrorMessage("");
-              }}
-              onExpired={() => {
-                setRecaptchaToken(null);
-              }}
-            />
-          </div>
-        </div>
-      )}
 
       {/* Inline Validation Error Message */}
       {errorMessage && (

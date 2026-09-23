@@ -6,9 +6,6 @@ import GlobalCanvasCursor from "@/components/GlobalCanvasCursor";
 import SubpageHeroKineticCanvas from "@/components/SubpageHeroKineticCanvas";
 import CompanyLogosMarquee from "@/components/CompanyLogosMarquee";
 import SubpageBottomCta from "@/components/SubpageBottomCta";
-import ReCAPTCHA from "react-google-recaptcha";
-import { RECAPTCHA_SITE_KEY } from "@/lib/recaptchaConfig";
-import { verifyRecaptchaToken } from "@/lib/verifyRecaptcha";
 import { formatUSPhoneNumber, validateFullName, validateStrictEmail, validateUSPhoneNumber } from "@/lib/usFormValidation";
 
 export const Route = createFileRoute("/packages")({
@@ -260,7 +257,6 @@ function PackagesPage() {
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
   const [phoneVal, setPhoneVal] = useState("");
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const quoteFormRef = useRef<HTMLDivElement>(null);
 
   const handleOrderClick = (pkgTitle: string) => {
@@ -301,19 +297,7 @@ function PackagesPage() {
       return;
     }
 
-    if (!recaptchaToken) {
-      setFormError("Please complete the Google reCAPTCHA verification checkbox below.");
-      return;
-    }
-
     setFormSubmitting(true);
-
-    const verifyRes = await verifyRecaptchaToken(recaptchaToken);
-    if (!verifyRes.success) {
-      setFormSubmitting(false);
-      setFormError(verifyRes.message || "reCAPTCHA verification failed. Please try again.");
-      return;
-    }
 
     try {
       formData.append("access_key", "a02c3a24-0150-4b1a-b0be-b2bdd36576fc");
@@ -649,7 +633,6 @@ function PackagesPage() {
                       <button
                         onClick={() => {
                           setFormSubmitted(false);
-                          setRecaptchaToken(null);
                         }}
                         className="px-8 py-3.5 rounded-xl bg-[#0c2340] hover:bg-[#00b4d8] text-white font-mono text-xs uppercase font-extrabold tracking-wider transition-colors"
                       >
@@ -745,20 +728,6 @@ function PackagesPage() {
                         placeholder="Tell us about your brand vision, number of products, current ad channels, or workflow automation requirements..."
                         className="w-full px-5 py-3.5 rounded-xl bg-slate-900 border-2 border-slate-700 focus:border-[#00b4d8] text-white font-sans outline-none transition-all placeholder:text-slate-500 resize-y"
                       />
-                    </div>
-
-                    {/* RECAPTCHA V2 */}
-                    <div className="pt-2">
-                      <div className="p-2 rounded-xl bg-white inline-block">
-                        <ReCAPTCHA
-                          sitekey={RECAPTCHA_SITE_KEY}
-                          onChange={(token) => {
-                            setRecaptchaToken(token);
-                            setFormError("");
-                          }}
-                          onExpired={() => setRecaptchaToken(null)}
-                        />
-                      </div>
                     </div>
 
                     {/* Submit Button */}

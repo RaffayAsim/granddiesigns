@@ -1,11 +1,8 @@
 import { useState, useRef, useEffect, memo } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import ReCAPTCHA from "react-google-recaptcha";
 import MegaNavbar from "@/components/MegaNavbar";
 import SiteFooter from "@/components/SiteFooter";
 import SharedHeroInlineForm from "@/components/SharedHeroInlineForm";
-import { RECAPTCHA_SITE_KEY } from "@/lib/recaptchaConfig";
-import { verifyRecaptchaToken } from "@/lib/verifyRecaptcha";
 import {
   validateFullName,
   validateUSPhoneNumber,
@@ -92,7 +89,6 @@ const HeroInlineQueryBar = memo(function HeroInlineQueryBar() {
   const [savedName, setSavedName] = useState("");
   const [savedPhone, setSavedPhone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -128,19 +124,7 @@ const HeroInlineQueryBar = memo(function HeroInlineQueryBar() {
         return;
       }
 
-      if (!recaptchaToken) {
-        setErrorMessage("Please complete the Google reCAPTCHA verification checkbox below.");
-        return;
-      }
-
       setSubmitting(true);
-
-      const verifyRes = await verifyRecaptchaToken(recaptchaToken);
-      if (!verifyRes.success) {
-        setSubmitting(false);
-        setErrorMessage(verifyRes.message || "reCAPTCHA verification failed. Please try again.");
-        return;
-      }
 
       try {
         const formData = new FormData();
@@ -149,7 +133,6 @@ const HeroInlineQueryBar = memo(function HeroInlineQueryBar() {
         formData.append("phone", savedPhone);
         formData.append("email", val.trim());
         formData.append("message", "Location Page Inquiry");
-        formData.append("g-recaptcha-response", recaptchaToken);
 
         await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -232,28 +215,10 @@ const HeroInlineQueryBar = memo(function HeroInlineQueryBar() {
           onPointerDown={(e) => e.stopPropagation()}
           className="px-9 py-4 bg-[#00b4d8] hover:bg-[#0284c7] disabled:bg-slate-500 text-white font-sans font-extrabold text-base md:text-lg rounded-xl md:rounded-r-xl md:rounded-l-none shadow-lg hover:scale-[1.02] transition-all shrink-0 flex items-center justify-center gap-2"
         >
-          <span>{submitting ? "Verifying..." : step === 3 ? "Submit" : "Next"}</span>
+          <span>{submitting ? "Submitting..." : step === 3 ? "Submit" : "Next"}</span>
           <span>→</span>
         </button>
       </form>
-
-      {/* OFFICIAL GOOGLE RECAPTCHA V2 WIDGET DISPLAY ON STEP 3 */}
-      {step === 3 && (
-        <div className="pt-2 flex flex-col items-center justify-center animate-in fade-in duration-300">
-          <div className="p-2 rounded-2xl bg-white/90 border-2 border-[#00b4d8] shadow-xl overflow-x-auto">
-            <ReCAPTCHA
-              sitekey={RECAPTCHA_SITE_KEY}
-              onChange={(token) => {
-                setRecaptchaToken(token);
-                setErrorMessage("");
-              }}
-              onExpired={() => {
-                setRecaptchaToken(null);
-              }}
-            />
-          </div>
-        </div>
-      )}
 
       {/* Inline Validation Error Message */}
       {errorMessage && (

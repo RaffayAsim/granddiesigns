@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import promoImg from "@/assets/studio-query-consultation.jpg";
-import { RECAPTCHA_SITE_KEY } from "@/lib/recaptchaConfig";
-import { verifyRecaptchaToken } from "@/lib/verifyRecaptcha";
 import {
   validateFullName,
   validateUSPhoneNumber,
@@ -14,8 +11,6 @@ export default function GlobalPromoPopup() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const [captchaError, setCaptchaError] = useState<string>("");
   const [validationError, setValidationError] = useState<string>("");
   const [phoneVal, setPhoneVal] = useState<string>("");
   const [selectedService, setSelectedService] = useState<string>("Logo Design");
@@ -70,23 +65,10 @@ export default function GlobalPromoPopup() {
     }
 
 
-    // 2. Google reCAPTCHA Verification
-    if (!recaptchaToken) {
-      setCaptchaError("Please complete the reCAPTCHA verification checkbox.");
-      return;
-    }
-
     setLoading(true);
 
     try {
-      const verifyResult = await verifyRecaptchaToken(recaptchaToken);
-      if (!verifyResult.success) {
-        setCaptchaError(verifyResult.message || "reCAPTCHA verification failed.");
-        setLoading(false);
-        return;
-      }
-
-      // 3. Web3Forms Submission
+      // Web3Forms Submission
       const payload = {
         access_key: "a02c3a24-0150-4b1a-b0be-b2bdd36576fc",
         subject: `🔥 [50% OFF PROMO] New Inquiry: ${selectedService} from ${fullName}`,
@@ -312,27 +294,6 @@ export default function GlobalPromoPopup() {
                   <label htmlFor="terms-agree" className="text-[10px] font-sans font-medium text-slate-600 cursor-pointer">
                     I Agree to <a href="/privacy" className="text-[#00b4d8] underline">Terms of Use</a> and <a href="/privacy" className="text-[#00b4d8] underline">Privacy Policy</a>.
                   </label>
-                </div>
-
-                {/* Google reCAPTCHA v2 Widget (using localhost test keys when dev, production keys when deployed) */}
-                <div className="pt-0.5">
-                  <div className="scale-[0.88] origin-left">
-                    <ReCAPTCHA
-                      sitekey={RECAPTCHA_SITE_KEY}
-                      onChange={(token) => {
-                        setRecaptchaToken(token);
-                        setCaptchaError("");
-                      }}
-                      onExpired={() => {
-                        setRecaptchaToken(null);
-                      }}
-                    />
-                  </div>
-                  {captchaError && (
-                    <p className="text-[11px] font-mono font-bold text-rose-600 animate-in fade-in">
-                      ⚠️ {captchaError}
-                    </p>
-                  )}
                 </div>
 
                 {/* Submit Button */}

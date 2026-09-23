@@ -1,7 +1,4 @@
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { RECAPTCHA_SITE_KEY } from "@/lib/recaptchaConfig";
-import { verifyRecaptchaToken } from "@/lib/verifyRecaptcha";
 import {
   validateFullName,
   validateUSPhoneNumber,
@@ -11,9 +8,7 @@ import {
 
 export default function OfficialInquiryFormSection() {
   const [submitted, setSubmitted] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const [captchaError, setCaptchaError] = useState<string>("");
-  const [validationError, setValidationError] = useState<string>("");
+  const [validationError, setValidationError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [phoneVal, setPhoneVal] = useState<string>("");
 
@@ -91,23 +86,9 @@ export default function OfficialInquiryFormSection() {
                   return;
                 }
 
-                if (!recaptchaToken) {
-                  setCaptchaError("Please complete the Google reCAPTCHA verification before submitting.");
-                  return;
-                }
-
                 setSubmitting(true);
 
-                // Verify token against server endpoint / Google siteverify API
-                const verifyRes = await verifyRecaptchaToken(recaptchaToken);
-                if (!verifyRes.success) {
-                  setSubmitting(false);
-                  setCaptchaError(verifyRes.message || "reCAPTCHA verification failed. Please try again.");
-                  return;
-                }
-
                 formData.append("access_key", "a02c3a24-0150-4b1a-b0be-b2bdd36576fc");
-                formData.append("g-recaptcha-response", recaptchaToken);
 
                 try {
                   await fetch("https://api.web3forms.com/submit", {
@@ -218,30 +199,6 @@ export default function OfficialInquiryFormSection() {
                   placeholder="Tell us about your brand, website vision, ad campaign goals, or automation bottlenecks. We'll prepare a structured architecture and fixed proposal."
                   className="w-full rounded-2xl border-2 border-slate-300 bg-slate-50 px-6 py-4 text-base md:text-lg font-bold text-[#0c2340] focus:bg-white focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/20 outline-none transition-all shadow-xs resize-y"
                 />
-              </div>
-
-              {/* OFFICIAL GOOGLE RECAPTCHA V2 WIDGET */}
-              <div className="space-y-2 pt-2">
-                <label className="block text-xs font-mono font-extrabold text-slate-600 uppercase tracking-wider">
-                  Security Verification <span className="text-rose-500">*</span>
-                </label>
-                <div className="overflow-x-auto">
-                  <ReCAPTCHA
-                    sitekey={RECAPTCHA_SITE_KEY}
-                    onChange={(token) => {
-                      setRecaptchaToken(token);
-                      setCaptchaError("");
-                    }}
-                    onExpired={() => {
-                      setRecaptchaToken(null);
-                    }}
-                  />
-                </div>
-                {captchaError && (
-                  <p className="text-xs md:text-sm font-mono font-bold text-rose-600 animate-in fade-in">
-                    ⚠️ {captchaError}
-                  </p>
-                )}
               </div>
 
               {/* SUBMIT BUTTON */}

@@ -1,7 +1,4 @@
 import { useState, useRef, memo } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import { RECAPTCHA_SITE_KEY } from "@/lib/recaptchaConfig";
-import { verifyRecaptchaToken } from "@/lib/verifyRecaptcha";
 import {
   validateFullName,
   validateUSPhoneNumber,
@@ -15,7 +12,6 @@ export const BottomAuthorForm = memo(function BottomAuthorForm() {
   const [savedName, setSavedName] = useState("");
   const [savedPhone, setSavedPhone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   const nameRef = useRef<HTMLInputElement>(null);
@@ -51,19 +47,7 @@ export const BottomAuthorForm = memo(function BottomAuthorForm() {
         return;
       }
 
-      if (!recaptchaToken) {
-        setErrorMessage("Please complete the Google reCAPTCHA verification checkbox below.");
-        return;
-      }
-
       setSubmitting(true);
-
-      const verifyRes = await verifyRecaptchaToken(recaptchaToken);
-      if (!verifyRes.success) {
-        setSubmitting(false);
-        setErrorMessage(verifyRes.message || "reCAPTCHA verification failed. Please try again.");
-        return;
-      }
 
       try {
         const formData = new FormData();
@@ -72,7 +56,6 @@ export const BottomAuthorForm = memo(function BottomAuthorForm() {
         formData.append("phone", savedPhone);
         formData.append("email", val);
         formData.append("message", "Digital Strategy Inquiry");
-        formData.append("g-recaptcha-response", recaptchaToken);
 
         await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -196,22 +179,6 @@ export const BottomAuthorForm = memo(function BottomAuthorForm() {
             onFocus={(e) => e.stopPropagation()}
             className="w-full px-6 py-4.5 rounded-2xl bg-white text-slate-950 font-sans font-extrabold text-lg border-4 border-[#00b4d8] shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#00b4d8]/60"
           />
-
-          {/* OFFICIAL GOOGLE RECAPTCHA V2 WIDGET DISPLAY ON STEP 3 */}
-          <div className="pt-2 flex flex-col items-start justify-start animate-in fade-in duration-300">
-            <div className="p-2 rounded-2xl bg-white border-2 border-[#00b4d8] shadow-xl overflow-x-auto">
-              <ReCAPTCHA
-                sitekey={RECAPTCHA_SITE_KEY}
-                onChange={(token) => {
-                  setRecaptchaToken(token);
-                  setErrorMessage("");
-                }}
-                onExpired={() => {
-                  setRecaptchaToken(null);
-                }}
-              />
-            </div>
-          </div>
         </div>
       )}
 

@@ -145,11 +145,11 @@ export default function MegaNavbar() {
       }`}
     >
       <div className="max-w-[1800px] mx-auto w-full px-6 md:px-12 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 group py-0.5 shrink-0">
+        <a href="/" className="flex items-center gap-3 group py-1 shrink-0">
           <img
             src={logoLightBg}
             alt="Grand Designs Official Logo"
-            className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-all"
+            className="h-14 md:h-16 lg:h-20 w-auto max-w-[260px] md:max-w-[340px] object-contain group-hover:scale-105 transition-all"
           />
         </a>
 

@@ -19,11 +19,11 @@ export default function SiteFooter() {
         
         {/* Top Logo Header Row - Strictly Logo Image Only */}
         <div className="flex items-center justify-between gap-4 pb-6 border-b border-white/25">
-          <Link to="/" className="inline-block group">
+          <Link to="/" className="inline-block group py-1">
             <img
               src={logoDarkBg}
               alt="Grand Designs Official Logo"
-              className="h-14 md:h-16 lg:h-18 w-auto object-contain group-hover:scale-105 transition-transform"
+              className="h-20 md:h-24 lg:h-28 w-auto max-w-[320px] md:max-w-[440px] object-contain group-hover:scale-105 transition-transform"
             />
           </Link>
 
