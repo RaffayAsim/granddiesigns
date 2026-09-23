@@ -36,7 +36,7 @@ export function validateUSPhoneNumber(phone: string): { isValid: boolean; messag
   if (digits.length !== 10) {
     return {
       isValid: false,
-      message: "Please enter a valid 10-digit US phone number (e.g. (833) 492-2918).",
+      message: "Please enter a valid 10-digit US phone number (e.g. (555) 000-0000).",
     };
   }
 

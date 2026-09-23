@@ -59,14 +59,14 @@ const SubpageBottomCta = memo(function SubpageBottomCta({
               </div>
             </div>
 
-            {/* Direct Phone Assistance Banner */}
+            {/* Direct Assistance Banner */}
             <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
               <span className="flex items-center gap-2 text-emerald-400 font-bold">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span>Executive hotline active 24/7</span>
+                <span>Executive strategy desk active 24/7</span>
               </span>
-              <a href="tel:+18334922918" className="text-white hover:text-[#00b4d8] font-bold underline decoration-[#00b4d8]/40 underline-offset-4">
-                Call +1 (833) 492-2918
+              <a href="/contact" className="text-white hover:text-[#00b4d8] font-bold underline decoration-[#00b4d8]/40 underline-offset-4">
+                Schedule a Consultation →
               </a>
             </div>
           </div>

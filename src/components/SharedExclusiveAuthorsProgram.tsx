@@ -153,7 +153,7 @@ export const BottomAuthorForm = memo(function BottomAuthorForm() {
             onChange={(e) => {
               e.target.value = formatUSPhoneNumber(e.target.value);
             }}
-            placeholder="e.g. (833) 492-2918..."
+            placeholder="e.g. (555) 000-0000..."
             onClick={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
             onPointerDown={(e) => e.stopPropagation()}
@@ -286,10 +286,10 @@ export default function SharedExclusiveAuthorsProgram({ scheduleCallOnly = false
 
                 <div className="space-y-4 pt-2">
                   <a
-                    href="tel:+18334922918"
-                    className="w-full py-4 px-8 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white font-mono text-sm md:text-base font-black uppercase tracking-widest shadow-[0_0_30px_rgba(225,29,72,0.6)] hover:scale-105 transition-all text-center block border-2 border-rose-400"
+                    href="/contact"
+                    className="w-full py-4 px-8 rounded-2xl bg-[#00b4d8] hover:bg-[#0284c7] text-white font-mono text-sm md:text-base font-black uppercase tracking-widest shadow-[0_0_30px_rgba(0,180,216,0.6)] hover:scale-105 transition-all text-center block border-2 border-[#00b4d8]"
                   >
-                    📞 Schedule a call now →
+                    Schedule Strategy Session →
                   </a>
 
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400 pt-2 border-t border-white/10">

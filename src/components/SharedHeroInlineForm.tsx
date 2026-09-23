@@ -183,7 +183,7 @@ export const SharedHeroInlineQueryBar = memo(function SharedHeroInlineQueryBar({
                 step === 1
                   ? "Enter Your Name..."
                   : step === 2
-                  ? "Enter US Phone (e.g. (833) 492-2918)..."
+                  ? "Enter US Phone (e.g. (555) 000-0000)..."
                   : "Enter Your Email (e.g. alex@company.com)..."
               }
               onClick={(e) => e.stopPropagation()}
@@ -201,18 +201,18 @@ export const SharedHeroInlineQueryBar = memo(function SharedHeroInlineQueryBar({
               onPointerDown={(e) => e.stopPropagation()}
               className="px-7 py-3 bg-[#00b4d8] hover:bg-[#0284c7] disabled:bg-slate-400 text-white font-sans font-extrabold text-sm md:text-base rounded-r-xl shadow-md hover:scale-[1.02] transition-all shrink-0 flex items-center justify-center gap-1.5 border-l border-white/20"
             >
-              <span>{submitting ? "Verifying..." : step === 3 ? "Submit" : "Next"}</span>
+              <span>{submitting ? "Submitting..." : step === 3 ? "Submit" : "Next"}</span>
               <span>→</span>
             </button>
           </form>
 
-        {/* 3. CALL NOW RED BUTTON */}
+        {/* 3. DISCOVERY AUDIT BUTTON */}
         <a
-          href="tel:+18334922918"
-          className={`px-7 py-3.5 rounded-2xl bg-rose-600 hover:bg-rose-700 text-white border-2 border-rose-400 font-mono text-xs md:text-sm font-extrabold uppercase tracking-widest shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2 h-[52px] ${stacked ? "w-full" : "shrink-0"}`}
+          href="/contact"
+          className={`px-7 py-3.5 rounded-2xl bg-[#0c2340] hover:bg-[#00b4d8] text-white border-2 border-white/20 font-mono text-xs md:text-sm font-extrabold uppercase tracking-widest shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2 h-[52px] ${stacked ? "w-full" : "shrink-0"}`}
         >
-          <span>📞</span>
-          <span>CALL +1 (833) 492-2918</span>
+          <span>⚡</span>
+          <span>DISCOVERY AUDIT →</span>
         </a>
       </div>
 

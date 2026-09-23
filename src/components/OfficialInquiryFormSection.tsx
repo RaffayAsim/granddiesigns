@@ -162,7 +162,7 @@ export default function OfficialInquiryFormSection() {
                     required
                     value={phoneVal}
                     onChange={(e) => setPhoneVal(formatUSPhoneNumber(e.target.value))}
-                    placeholder="+1 (833) 492-2918"
+                    placeholder="(555) 000-0000"
                     className="w-full rounded-2xl border-2 border-slate-300 bg-slate-50 px-6 py-4 text-base md:text-lg font-bold text-[#0c2340] focus:bg-white focus:border-[#00b4d8] focus:ring-4 focus:ring-[#00b4d8]/20 outline-none transition-all shadow-xs"
                   />
                 </div>

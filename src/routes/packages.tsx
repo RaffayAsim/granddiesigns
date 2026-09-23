@@ -687,7 +687,7 @@ function PackagesPage() {
                           required
                           value={phoneVal}
                           onChange={(e) => setPhoneVal(formatUSPhoneNumber(e.target.value))}
-                          placeholder="(833) 492-2918"
+                          placeholder="(555) 000-0000"
                           className="w-full px-5 py-3.5 rounded-xl bg-slate-900 border-2 border-slate-700 focus:border-[#00b4d8] text-white font-sans outline-none transition-all placeholder:text-slate-500"
                         />
                       </div>
@@ -743,7 +743,7 @@ function PackagesPage() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400 pt-2 border-t border-slate-800">
                       <span>✓ 100% Confidential NDA Protected</span>
-                      <span>📞 Direct Desk: <a href="tel:+18334922918" className="text-white hover:text-[#00b4d8] font-bold">+1 (833) 492-2918</a></span>
+                      <span>⚡ Senior Strategy Team Available 24/7</span>
                     </div>
 
                   </form>

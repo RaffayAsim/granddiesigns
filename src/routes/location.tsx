@@ -197,7 +197,7 @@ const HeroInlineQueryBar = memo(function HeroInlineQueryBar() {
             step === 1
               ? "Enter Your Name..."
               : step === 2
-              ? "Enter US Phone (e.g. (833) 492-2918)..."
+              ? "Enter US Phone (e.g. (555) 000-0000)..."
               : "Enter Your Email (e.g. alex@company.com)..."
           }
           onClick={(e) => e.stopPropagation()}
@@ -350,7 +350,7 @@ export const BottomAuthorForm = memo(function BottomAuthorForm() {
             ref={phoneRef}
             type="tel"
             defaultValue={savedPhone}
-            placeholder="Enter your phone number (e.g. +1 833 492 2918)..."
+            placeholder="Enter your phone number (e.g. (555) 000-0000)..."
             onClick={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
             onPointerDown={(e) => e.stopPropagation()}
@@ -485,11 +485,11 @@ function LocationPage() {
                 <div className="space-y-3 font-mono text-xs text-slate-800">
                   <div className="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#00b4d8] shrink-0" />
-                    <span>Toll Free Hotline: <a href="tel:+18334922918" className="text-[#0c2340] hover:text-[#00b4d8] font-bold">+1 (833) 492-2918</a></span>
+                    <span>Executive Desk: <a href="/contact" className="text-[#0c2340] hover:text-[#00b4d8] font-bold">Direct Discovery Consultation →</a></span>
                   </div>
                   <div className="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-                    <span>Studio Desk: <a href="/contact" className="text-[#0c2340] hover:text-[#00b4d8] font-bold">Schedule Consultation →</a></span>
+                    <span>Response Time: Guaranteed under 24 hours</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0" />
@@ -499,10 +499,10 @@ function LocationPage() {
 
                 <div className="pt-2">
                   <a
-                    href="tel:+18334922918"
-                    className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-mono text-xs font-extrabold uppercase tracking-widest shadow-md transition-all hover:scale-105"
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-[#00b4d8] hover:bg-[#0284c7] text-white font-mono text-xs font-extrabold uppercase tracking-widest shadow-md transition-all hover:scale-105"
                   >
-                    <span>📞 Direct Call Houston HQ</span>
+                    <span>Schedule Discovery Consultation</span>
                     <span>→</span>
                   </a>
                 </div>

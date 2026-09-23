@@ -249,7 +249,7 @@ export default function GlobalPromoPopup() {
                       required
                       value={phoneVal}
                       onChange={(e) => setPhoneVal(formatUSPhoneNumber(e.target.value))}
-                      placeholder="(833) 492-2918"
+                      placeholder="(555) 000-0000"
                       className="w-full px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00b4d8] text-xs font-semibold"
                     />
                   </div>

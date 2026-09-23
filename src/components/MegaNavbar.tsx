@@ -240,7 +240,7 @@ export default function MegaNavbar() {
 
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:+18334922918"
+            href="/contact"
             className="bg-[#00b4d8] hover:bg-[#0284c7] text-white px-6 py-2.5 rounded-full font-sans text-xs xl:text-sm uppercase font-extrabold tracking-widest transition-all duration-300 shadow-[0_4px_15px_rgba(0,180,216,0.4)] hover:shadow-[0_6px_22px_rgba(0,180,216,0.6)] hover:scale-105 flex items-center gap-2"
           >
             <span>Hire an expert →</span>
@@ -342,13 +342,13 @@ export default function MegaNavbar() {
             );
           })}
 
-          {/* Direct Call Button in White Mobile Slider Drawer */}
+          {/* Direct Contact Button in White Mobile Slider Drawer */}
           <div className="pt-3">
             <a
-              href="tel:+18334922918"
+              href="/contact"
               className="w-full bg-[#00b4d8] hover:bg-[#0284c7] text-white py-3.5 rounded-2xl font-mono text-xs uppercase font-extrabold tracking-widest text-center block shadow-[0_4px_20px_rgba(0,180,216,0.4)] hover:scale-105 transition-all"
             >
-              📞 CALL +1 (833) 492-2918 NOW →
+              ✉ GET IN TOUCH WITH AN EXPERT →
             </a>
           </div>
         </div>

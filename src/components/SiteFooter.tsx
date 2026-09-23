@@ -82,24 +82,24 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* TAB 4: SEPARATE PHONE NUMBER & EMAIL CONTACT CARD (3 columns) */}
+          {/* TAB 4: DIRECT INQUIRY & STRATEGY DESK (3 columns) */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="font-mono text-xs font-extrabold uppercase tracking-[0.25em] text-white border-b border-white/30 pb-2">
-              DIRECT EXECUTIVE HOTLINE
+              DIRECT STRATEGY DESK
             </h4>
             
             <div className="p-4 rounded-2xl bg-white/10 border border-white/30 backdrop-blur-md space-y-3 shadow-lg">
               <div className="space-y-0.5">
                 <span className="text-[9px] font-mono font-extrabold uppercase tracking-widest text-sky-200 block">
-                  Direct executive hotline · Toll free, 24/7
+                  DIGITAL STRATEGY &amp; CONSULTATION
                 </span>
-                <a
-                  href="tel:+18334922918"
+                <Link
+                  to="/contact"
                   className="font-mono text-base font-extrabold text-white hover:text-sky-200 transition-colors flex items-center gap-2"
                 >
-                  <span>📞</span>
-                  <span>+1 (833) 492-2918</span>
-                </a>
+                  <span>✉</span>
+                  <span>Direct Inquiry Desk</span>
+                </Link>
               </div>
 
               <div className="space-y-0.5 border-t border-white/20 pt-2.5">
