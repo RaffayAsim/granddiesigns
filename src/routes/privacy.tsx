@@ -9,10 +9,10 @@ export const Route = createFileRoute("/privacy")({
   component: PrivacyPolicyPage,
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Digital Creative & Engineering Agency" },
-      { name: "description", content: "Understanding how we protect your personal data, intellectual property, project briefs, and proprietary technology." },
-      { property: "og:title", content: "Privacy Policy — Digital Creative & Engineering Agency" },
-      { property: "og:description", content: "Understanding how we protect your personal data, intellectual property, project briefs, and proprietary technology." },
+      { title: "Privacy Policy — Grand Diesigns" },
+      { name: "description", content: "Understanding how Grand Diesigns protects your personal data, intellectual property, project briefs, and proprietary technology." },
+      { property: "og:title", content: "Privacy Policy — Grand Diesigns" },
+      { property: "og:description", content: "Understanding how Grand Diesigns protects your personal data, intellectual property, project briefs, and proprietary technology." },
     ],
   }),
 });
@@ -40,7 +40,7 @@ function PrivacyPolicyPage() {
           </h1>
 
           <p className="text-slate-300 font-sans text-lg md:text-2xl font-light leading-relaxed max-w-4xl">
-            Digital Creative &amp; Engineering Agency · Privacy &amp; Data Security Policy
+            Grand Diesigns · Privacy &amp; Data Security Policy
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ function PrivacyPolicyPage() {
               <div className="space-y-3">
                 <h3 className="font-serif text-2xl font-extrabold text-[#0c2340]">1. Overview</h3>
                 <p>
-                  Digital Creative &amp; Engineering Agency ("we," "us," "our") respects your privacy. This policy explains what information we collect through our website and in the course of providing our brand identity, web engineering, digital marketing, and AI automation services, how we use and share it, and your choices. It applies to clients, prospective partners, and website visitors.
+                  Grand Diesigns ("we," "us," "our") respects your privacy. This policy explains what information we collect through our website and in the course of providing our brand identity, web engineering, digital marketing, and AI automation services, how we use and share it, and your choices. It applies to clients, prospective partners, and website visitors.
                 </p>
               </div>
 
@@ -169,7 +169,7 @@ function PrivacyPolicyPage() {
               <div className="space-y-3 pt-6 border-t-2 border-[#00b4d8]/40 bg-slate-50 p-6 rounded-2xl">
                 <h3 className="font-serif text-2xl font-extrabold text-[#0c2340]">12. Contact</h3>
                 <p className="font-mono text-sm text-slate-700 leading-relaxed">
-                  <strong>Digital Creative &amp; Engineering Agency</strong> · Houston, Texas, USA · Executive Support: <a href="/contact" className="text-[#0c2340] font-bold hover:text-[#00b4d8]">Online Inquiry Desk</a>
+                  <strong>Grand Diesigns</strong> · Houston, Texas, USA · Executive Support: <a href="/contact" className="text-[#0c2340] font-bold hover:text-[#00b4d8]">Online Inquiry Desk</a>
                 </p>
               </div>
 

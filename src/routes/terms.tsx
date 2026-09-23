@@ -9,8 +9,8 @@ export const Route = createFileRoute("/terms")({
   component: TermsOfServicePage,
   head: () => ({
     meta: [
-      { title: "Terms of Service — Digital Creative & Engineering Agency" },
-      { name: "description", content: "Master Terms of Service governing brand identity design, custom web engineering, performance digital marketing, and AI automation." },
+      { title: "Terms of Service — Grand Diesigns" },
+      { name: "description", content: "Master Terms of Service governing brand identity design, custom web engineering, performance digital marketing, and AI automation by Grand Diesigns." },
     ],
   }),
 });
@@ -38,7 +38,7 @@ function TermsOfServicePage() {
           </h1>
 
           <p className="text-slate-300 font-sans text-lg md:text-2xl font-light leading-relaxed max-w-4xl">
-            Digital Creative &amp; Engineering Agency · Terms of Service &amp; Project Standards
+            Grand Diesigns · Terms of Service &amp; Project Standards
           </p>
         </div>
       </section>
@@ -76,7 +76,7 @@ function TermsOfServicePage() {
               <div className="space-y-3">
                 <h3 className="font-serif text-2xl font-extrabold text-[#0c2340]">1. Who We Are</h3>
                 <p>
-                  Digital Creative &amp; Engineering Agency ("we," "us," "our") is a full-service creative technology provider based in Houston, Texas, USA. We provide bespoke brand identity &amp; logo design, custom web application engineering, performance digital marketing, and autonomous AI automation services to businesses, startups, and enterprises ("you," the "Client").
+                  Grand Diesigns ("we," "us," "our") is a full-service creative technology provider based in Houston, Texas, USA. We provide bespoke brand identity &amp; logo design, custom web application engineering, performance digital marketing, and autonomous AI automation services to businesses, startups, and enterprises ("you," the "Client").
                 </p>
               </div>
 
@@ -188,7 +188,7 @@ function TermsOfServicePage() {
               <div className="space-y-3 pt-6 border-t-2 border-[#00b4d8]/40 bg-slate-50 p-6 rounded-2xl">
                 <h3 className="font-serif text-2xl font-extrabold text-[#0c2340]">15. Contact</h3>
                 <p className="font-mono text-sm text-slate-700 leading-relaxed">
-                  <strong>Digital Creative &amp; Engineering Agency</strong> · Houston, Texas, USA · Executive Support: <a href="/contact" className="text-[#0c2340] font-bold hover:text-[#00b4d8]">Online Inquiry Desk</a>
+                  <strong>Grand Diesigns</strong> · Houston, Texas, USA · Executive Support: <a href="/contact" className="text-[#0c2340] font-bold hover:text-[#00b4d8]">Online Inquiry Desk</a>
                 </p>
               </div>
 

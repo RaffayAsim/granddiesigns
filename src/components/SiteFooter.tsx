@@ -22,7 +22,7 @@ export default function SiteFooter() {
           <Link to="/" className="inline-block group py-1">
             <img
               src={logoDarkBg}
-              alt="Grand Designs Official Logo"
+              alt="Grand Diesigns Official Logo"
               className="h-20 md:h-24 lg:h-28 w-auto max-w-[320px] md:max-w-[440px] object-contain group-hover:scale-105 transition-transform"
             />
           </Link>
@@ -133,7 +133,7 @@ export default function SiteFooter() {
         {/* BOTTOM POLICY & COPYRIGHT BAR */}
         <div className="pt-4 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] font-mono text-sky-100">
           <div>
-            © {new Date().getFullYear()} Grand Designs (granddiesigns.com). All rights reserved.
+            © {new Date().getFullYear()} Grand Diesigns (granddiesigns.com). All rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-white font-bold">

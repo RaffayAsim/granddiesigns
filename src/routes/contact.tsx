@@ -13,11 +13,11 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Schedule Strategy Consultation — Digital Engineering & Brand Studio" },
+      { title: "Schedule Strategy Consultation — Grand Diesigns" },
       {
         name: "description",
         content:
-          "Book a 20-minute strategy call with a senior lead. Receive a fixed scope, architectural blueprint, and quote within 24 hours.",
+          "Book a 20-minute strategy call with Grand Diesigns senior leads. Receive a fixed scope, architectural blueprint, and quote within 24 hours.",
       },
     ],
   }),

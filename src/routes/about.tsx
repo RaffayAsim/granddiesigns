@@ -22,11 +22,11 @@ export const Route = createFileRoute("/about")({
   component: AboutStoryPage,
   head: () => ({
     meta: [
-      { title: "Our Story & Manifesto — Digital Studio & Engineering Lab" },
+      { title: "Our Story & Manifesto — Grand Diesigns" },
       {
         name: "description",
         content:
-          "The story behind our studio — dismantling slow, bloated agencies to engineer iconic logos, lightning-fast web applications, and autonomous AI automation.",
+          "The story behind Grand Diesigns — dismantling slow, bloated agencies to engineer iconic logos, lightning-fast web applications, and autonomous AI automation.",
       },
     ],
   }),
