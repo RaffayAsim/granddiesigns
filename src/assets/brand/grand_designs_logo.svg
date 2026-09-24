@@ -58,7 +58,7 @@
     <circle cx="55" cy="58" r="6" fill="#00e5ff" filter="url(#cyanGlow)" />
   </g>
 
-  <!-- TYPOGRAPHY: GRAND DIESIGNS -->
+  <!-- TYPOGRAPHY: GRAND DESIGNS -->
   <g transform="translate(145, 0)">
     <!-- Primary Wordmark -->
     <text
@@ -70,7 +70,7 @@
       letter-spacing="0.08em"
       fill="#ffffff"
     >
-      GRAND <tspan fill="url(#gdCyanGrad)">DIESIGNS</tspan>
+      GRAND <tspan fill="url(#gdCyanGrad)">DESIGNS</tspan>
     </text>
 
     <!-- Subtitle / Descriptor -->

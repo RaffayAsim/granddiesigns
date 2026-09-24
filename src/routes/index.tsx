@@ -69,10 +69,10 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Grand Diesigns — Logo Design, Web Dev, Marketing & AI Automation" },
-      { name: "description", content: "Grand Diesigns is an end-to-end digital studio: custom logo design, high-converting website development, digital marketing, and intelligent AI automation." },
-      { property: "og:title", content: "Grand Diesigns — Logo Design, Web Dev, Marketing & AI Automation" },
-      { property: "og:description", content: "Grand Diesigns — Custom logo design, website development, digital marketing campaigns, and AI workflow automation." },
+      { title: "Grand Designs — Logo Design, Web Dev, Marketing & AI Automation" },
+      { name: "description", content: "Grand Designs is an end-to-end digital studio: custom logo design, high-converting website development, digital marketing, and intelligent AI automation." },
+      { property: "og:title", content: "Grand Designs — Logo Design, Web Dev, Marketing & AI Automation" },
+      { property: "og:description", content: "Grand Designs — Custom logo design, website development, digital marketing campaigns, and AI workflow automation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

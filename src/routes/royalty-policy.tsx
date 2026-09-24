@@ -38,7 +38,7 @@ function RoyaltyPolicyPage() {
           </h1>
 
           <p className="text-slate-300 font-sans text-lg md:text-2xl font-light leading-relaxed max-w-4xl">
-            Grand Diesigns · Intellectual Property &amp; Deliverables Guarantee
+            Grand Designs · Intellectual Property &amp; Deliverables Guarantee
           </p>
         </div>
       </section>
@@ -108,7 +108,7 @@ function RoyaltyPolicyPage() {
               <div className="space-y-3 pt-6 border-t-2 border-[#00b4d8]/40 bg-slate-50 p-6 rounded-2xl">
                 <h3 className="font-serif text-2xl font-extrabold text-[#0c2340]">5. Contact</h3>
                 <p className="font-mono text-sm text-slate-700 leading-relaxed">
-                  <strong>Grand Diesigns</strong> · Houston, Texas, USA · Executive Support: <a href="/contact" className="text-[#0c2340] font-bold hover:text-[#00b4d8]">Online Inquiry Desk</a>
+                  <strong>Grand Designs</strong> · Houston, Texas, USA · Executive Support: <a href="/contact" className="text-[#0c2340] font-bold hover:text-[#00b4d8]">Online Inquiry Desk</a>
                 </p>
               </div>
 

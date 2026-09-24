@@ -18,11 +18,11 @@ export const Route = createFileRoute("/location")({
   component: LocationPage,
   head: () => ({
     meta: [
-      { title: "Studio Headquarters — Houston, Texas | Grand Diesigns" },
+      { title: "Studio Headquarters — Houston, Texas | Grand Designs" },
       {
         name: "description",
         content:
-          "Headquartered in the heart of Houston, Texas. Grand Diesigns provides brand identity, custom web apps, performance marketing, and AI automation.",
+          "Headquartered in the heart of Houston, Texas. Grand Designs provides brand identity, custom web apps, performance marketing, and AI automation.",
       },
     ],
   }),
